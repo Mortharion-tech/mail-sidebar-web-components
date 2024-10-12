@@ -16,14 +16,16 @@ class AppSidebarButton extends HTMLElement {
         const unread = this.getAttribute('unreadCount');
         const selected = this.getAttribute('selected');
 
-        this.shadowRoot.querySelector('.text').innerText = text;
+        if (text) {
+            this.shadowRoot.querySelector('.sidebar-button__text').innerText = text;
+        }
         if (unread) {
-            this.shadowRoot.getElementById('unread').innerText = unread;
-            this.shadowRoot.querySelector('.text').style.fontWeight = 'bold';
+            this.shadowRoot.querySelector('.sidebar-button__unread').innerText = unread;
+            this.shadowRoot.querySelector('.sidebar-button__text').style.fontWeight = 'bold';
         }
         if (selected) {
             this.shadowRoot.querySelector('.highlight').style.backgroundColor = '#D3E2FE';
-            this.shadowRoot.querySelector('.text').style.fontWeight = 'bold';
+            this.shadowRoot.querySelector('.sidebar-button__text').style.fontWeight = 'bold';
         }
     }
 

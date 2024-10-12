@@ -7,11 +7,17 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .flex {
+        /*  Did the styling without reset and it fits now :/
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }   */
+        .sidebar_flex {
             display: flex;
             flex-direction: column;
         }
-        header {
+        .header {
             display: flex;
             align-items: center;
             padding-left: 10px;
@@ -96,7 +102,7 @@
     </style>
 </head>
 <body>
-<header>
+<header class="header">
     <button class="mainmenu tooltip">
         <i class="fas fa-bars icon-grey"></i>
         <span class="tooltiptext">Main menu</span>
@@ -105,65 +111,68 @@
 </header>
 
 <button class="compose"><span class="bold">🖊</span><span>Compose</span></button>
-<div class="flex">
+<div class="sidebar_flex">
     <app-sidebar-button text="Inbox" selected="true">
-        <span slot="icon">📥</span>
+        <span slot="sidebar-button__icon">📥</span>
     </app-sidebar-button>
     <app-sidebar-button text="Starred">
-        <span slot="icon">⭐️</span>
+        <span slot="sidebar-button__icon">⭐️</span>
     </app-sidebar-button>
     <app-sidebar-button text="Snoozed">
-        <span slot="icon">⏱</span>
+        <span slot="sidebar-button__icon">⏱</span>
     </app-sidebar-button>
     <app-sidebar-button text="Sent">
-        <span slot="icon">➡️</span>
+        <span slot="sidebar-button__icon">➡️</span>
     </app-sidebar-button>
     <app-sidebar-button text="Drafts" unreadCount="1">
-        <span slot="icon">📄</span>
+        <span slot="sidebar-button__icon">📄</span>
     </app-sidebar-button>
 </div>
 
 <template id="sidebar-button">
     <style>
-        body {
+        .sidebar-button__container {
             display: flex;
             align-content: space-between;
         }
-        .icon {
+        /* .sidebar-button__icon {
             margin: 50px;
             padding: 50px;
-        }
-        #unread {
+        } */
+        .sidebar-button__unread {
             margin-left: 20px;
             padding-left: 20px;
         }
-        button {
+        .sidebar-button__button {
             background: none;
             border: none;
             display: flex;
             justify-content: space-between;
-        }
-        .highlight {
             width: 10rem;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-        button:hover {
+        /* .highlight {
+            width: 10rem;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        } */
+        .sidebar-button__button:hover {
             cursor: pointer;
             background-color: lightgrey;
         }
-        button:focus {
+        .sidebar-button__button:focus {
             background-color: lightgrey;
         }
-        .text {
+        .sidebar-button__text {
             margin: 0 auto;
         }
     </style>
-    <body>
-    <button class="highlight">
-        <span><slot name="icon" class="icon"></slot></span>
-        <span class="text">Default</span>
-        <span><slot name="unread" id="unread"></slot></span>
+    <body class="sidebar-button__container">
+    <button class="sidebar-button__button">
+        <span><slot name="sidebar-button__icon" class="sidebar-button__icon"></slot></span>
+        <span class="sidebar-button__text">Unnamed Label</span>
+        <span><slot name="sidebar-button__unread" class="sidebar-button__unread"></slot></span>
     </button>
     </body>
 </template>
