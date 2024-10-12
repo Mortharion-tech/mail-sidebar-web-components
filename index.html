@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Sidebar</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+        h1 {
+            font-weight: normal;
+            color: #454745;
+            font-size: 1.5rem;
+            margin-left: 5px
+        }
+        button.mainmenu {
+            height: 24px;
+            width: 24px;
+            border: none;
+            background: none;
+        }
+        button.mainmenu:hover {
+            cursor: pointer;
+            background-color: #E8EAED;
+            border-radius: 50%;
+        }
+        button.mainmenu:focus {
+            background-color: #E8EAED;
+            border-radius: 50%;
+        }
+        .icon-grey {
+            color: #5F6367;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            background-color: rgba(60,64,67,.9);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 6px;
+            letter-spacing: .8px;
+            line-height: 16px;
+            
+            position: absolute;
+            z-index: 1000;
+            width: 40px;
+            top: 100%;
+            left: 50%;
+            margin-left: -20px;
+            margin-top: 4px;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+        .tooltip:focus .tooltiptext {
+            visibility: visible;
+        }
+
+        button.compose {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 1rem;
+            border: none;
+            background-color: #C3E7FF;
+            height: 3rem;
+            width: 8rem;
+            margin-bottom: 15px;
+            font-size: .875rem;
+        }
+        button.compose:hover {
+            cursor: pointer;
+            box-shadow: 4px 4px 10px grey;
+        }
+        button.compose:focus {
+            box-shadow: 4px 4px 10px grey;
+        }
+        span.bold {
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+<header>
+    <button class="mainmenu tooltip">
+        <i class="fas fa-bars icon-grey"></i>
+        <span class="tooltiptext">Main menu</span>
+    </button>
+    <h1>📬 Mail App</h1>
+</header>
+
+<button class="compose"><span class="bold">🖊</span><span>Compose</span></button>
+<div class="flex">
+    <app-sidebar-button text="Inbox" selected="true">
+        <span slot="icon">📥</span>
+    </app-sidebar-button>
+    <app-sidebar-button text="Starred">
+        <span slot="icon">⭐️</span>
+    </app-sidebar-button>
+    <app-sidebar-button text="Snoozed">
+        <span slot="icon">⏱</span>
+    </app-sidebar-button>
+    <app-sidebar-button text="Sent">
+        <span slot="icon">➡️</span>
+    </app-sidebar-button>
+    <app-sidebar-button text="Drafts" unreadCount="1">
+        <span slot="icon">📄</span>
+    </app-sidebar-button>
+</div>
+
+<template id="sidebar-button">
+    <style>
+        body {
+            display: flex;
+            align-content: space-between;
+        }
+        .icon {
+            margin: 50px;
+            padding: 50px;
+        }
+        #unread {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        button {
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        .highlight {
+            width: 10rem;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        button:hover {
+            cursor: pointer;
+            background-color: lightgrey;
+        }
+        button:focus {
+            background-color: lightgrey;
+        }
+        .text {
+            margin: 0 auto;
+        }
+    </style>
+    <body>
+    <button class="highlight">
+        <span><slot name="icon" class="icon"></slot></span>
+        <span class="text">Default</span>
+        <span><slot name="unread" id="unread"></slot></span>
+    </button>
+    </body>
+</template>
+
+</body>
+</html>
