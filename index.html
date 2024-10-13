@@ -74,7 +74,7 @@
             visibility: visible;
         }
 
-        button.compose {
+        .compose__button {
             display: flex;
             align-items: center;
             justify-content: space-around;
@@ -86,14 +86,14 @@
             margin-bottom: 15px;
             font-size: .875rem;
         }
-        button.compose:hover {
+        .compose__button:hover {
             cursor: pointer;
             box-shadow: 4px 4px 10px grey;
         }
-        button.compose:focus {
+        .compose__button:focus {
             box-shadow: 4px 4px 10px grey;
         }
-        span.bold {
+        .compose__button--bold {
             font-weight: bold;
         }
         
@@ -108,7 +108,7 @@
     <h1 class="header__heading">📬 Mail App</h1>
 </header>
 
-<button class="compose"><span class="bold">🖊</span><span>Compose</span></button>
+<button class="compose__button"><span class="compose__button--bold">🖊</span><span>Compose</span></button>
 <div class="sidebar__container">
     <app-sidebar-button text="Inbox" selected="true">
         <span slot="sidebar-button__icon">📥</span>
