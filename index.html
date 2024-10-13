@@ -13,44 +13,44 @@
             margin: 0;
             box-sizing: border-box;
         }   */
-        .sidebar_flex {
+        /* .sidebar__container {
             display: flex;
             flex-direction: column;
-        }
-        .header {
+        } */
+        .header__container {
             display: flex;
             align-items: center;
             padding-left: 10px;
         }
-        h1 {
+        .header__heading {
             font-weight: normal;
             color: #454745;
             font-size: 1.5rem;
             margin-left: 5px
         }
-        .header__mainmenu {
+        .header__button__mainmenu {
             height: 24px;
             width: 24px;
             border: none;
             background: none;
         }
-        button.mainmenu:hover {
+        .header__button__mainmenu:hover {
             cursor: pointer;
             background-color: #E8EAED;
             border-radius: 50%;
         }
-        button.mainmenu:focus {
+        .header__button__mainmenu:focus {
             background-color: #E8EAED;
             border-radius: 50%;
         }
         .icon-grey {
             color: #5F6367;
         }
-        .header__mainmenu--tooltip {
+        .header__button__mainmenu--tooltip {
             position: relative;
             display: inline-block;
         }
-        .header__mainmenu--tooltip .header__mainmenu--tooltiptext {
+        .header__button__mainmenu--tooltip .header__button__mainmenu--tooltiptext {
             visibility: hidden;
             background-color: rgba(60,64,67,.9);
             color: #FFFFFF;
@@ -69,8 +69,8 @@
             margin-left: -20px;
             margin-top: 4px;
         }
-        .header__mainmenu--tooltip:hover .header__mainmenu--tooltiptext,
-        .header__mainmenu--tooltip:focus .header__mainmenu--tooltiptext {
+        .header__button__mainmenu--tooltip:hover .header__button__mainmenu--tooltiptext,
+        .header__button__mainmenu--tooltip:focus .header__button__mainmenu--tooltiptext {
             visibility: visible;
         }
 
@@ -100,16 +100,16 @@
     </style>
 </head>
 <body>
-<header class="header">
-    <button class="header__mainmenu header__mainmenu--tooltip">
+<header class="header__container">
+    <button class="header__button__mainmenu header__button__mainmenu--tooltip">
         <i class="fas fa-bars icon-grey"></i>
-        <span class="header__mainmenu--tooltiptext">Main menu</span>
+        <span class="header__button__mainmenu--tooltiptext">Main menu</span>
     </button>
-    <h1>📬 Mail App</h1>
+    <h1 class="header__heading">📬 Mail App</h1>
 </header>
 
 <button class="compose"><span class="bold">🖊</span><span>Compose</span></button>
-<div class="sidebar_flex">
+<div class="sidebar__container">
     <app-sidebar-button text="Inbox" selected="true">
         <span slot="sidebar-button__icon">📥</span>
     </app-sidebar-button>
