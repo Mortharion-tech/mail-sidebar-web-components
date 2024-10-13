@@ -28,7 +28,7 @@
             font-size: 1.5rem;
             margin-left: 5px
         }
-        button.mainmenu {
+        .header__mainmenu {
             height: 24px;
             width: 24px;
             border: none;
@@ -46,11 +46,11 @@
         .icon-grey {
             color: #5F6367;
         }
-        .tooltip {
+        .header__mainmenu--tooltip {
             position: relative;
             display: inline-block;
         }
-        .tooltip .tooltiptext {
+        .header__mainmenu--tooltip .header__mainmenu--tooltiptext {
             visibility: hidden;
             background-color: rgba(60,64,67,.9);
             color: #FFFFFF;
@@ -69,10 +69,8 @@
             margin-left: -20px;
             margin-top: 4px;
         }
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-        }
-        .tooltip:focus .tooltiptext {
+        .header__mainmenu--tooltip:hover .header__mainmenu--tooltiptext,
+        .header__mainmenu--tooltip:focus .header__mainmenu--tooltiptext {
             visibility: visible;
         }
 
@@ -103,9 +101,9 @@
 </head>
 <body>
 <header class="header">
-    <button class="mainmenu tooltip">
+    <button class="header__mainmenu header__mainmenu--tooltip">
         <i class="fas fa-bars icon-grey"></i>
-        <span class="tooltiptext">Main menu</span>
+        <span class="header__mainmenu--tooltiptext">Main menu</span>
     </button>
     <h1>📬 Mail App</h1>
 </header>
