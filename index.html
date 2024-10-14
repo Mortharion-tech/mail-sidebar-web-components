@@ -28,29 +28,29 @@
             font-size: 1.5rem;
             margin-left: 5px
         }
-        .header__button__mainmenu {
+        .header__button-mainmenu {
             height: 24px;
             width: 24px;
             border: none;
             background: none;
         }
-        .header__button__mainmenu:hover {
+        .header__button-mainmenu:hover {
             cursor: pointer;
             background-color: #E8EAED;
             border-radius: 50%;
         }
-        .header__button__mainmenu:focus {
+        .header__button-mainmenu:focus {
             background-color: #E8EAED;
             border-radius: 50%;
         }
-        .icon-grey {
+        .header__icon--grey {
             color: #5F6367;
         }
-        .header__button__mainmenu--tooltip {
+        .header__button-mainmenu--tooltip {
             position: relative;
             display: inline-block;
         }
-        .header__button__mainmenu--tooltip .header__button__mainmenu--tooltiptext {
+        .header__button-mainmenu--tooltip .header__button-mainmenu--tooltiptext {
             visibility: hidden;
             background-color: rgba(60,64,67,.9);
             color: #FFFFFF;
@@ -69,8 +69,8 @@
             margin-left: -20px;
             margin-top: 4px;
         }
-        .header__button__mainmenu--tooltip:hover .header__button__mainmenu--tooltiptext,
-        .header__button__mainmenu--tooltip:focus .header__button__mainmenu--tooltiptext {
+        .header__button-mainmenu--tooltip:hover .header__button-mainmenu--tooltiptext,
+        .header__button-mainmenu--tooltip:focus .header__button-mainmenu--tooltiptext {
             visibility: visible;
         }
 
@@ -103,9 +103,9 @@
 </head>
 <body>
 <header class="header__container">
-    <button class="header__button__mainmenu header__button__mainmenu--tooltip">
-        <i class="fas fa-bars icon-grey"></i>
-        <span class="header__button__mainmenu--tooltiptext">Main menu</span>
+    <button class="header__button-mainmenu header__button-mainmenu--tooltip">
+        <i class="fas fa-bars header__icon--grey"></i>
+        <span class="header__button-mainmenu--tooltiptext">Main menu</span>
     </button>
     <h1 class="header__heading">📬 Mail App</h1>
 </header>
