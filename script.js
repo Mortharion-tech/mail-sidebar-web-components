@@ -4,14 +4,9 @@ class AppSidebarButton extends HTMLElement {
         this.attachShadow({ mode: "open" });
         const appSidebarButtonTemplate = document.getElementById('sidebar-button').content.cloneNode(true);
         this.shadowRoot.appendChild(appSidebarButtonTemplate);
-    //    const template = document.getElementById('sidebar-buton');
-        
     }
 
     connectedCallback() {
-        //this.shadowRoot.innerHTML = "Button";
-    //    console.log(this);
-        
         const text = this.getAttribute('text');
         const unread = this.getAttribute('unreadCount');
         const selected = this.getAttribute('selected');
@@ -24,14 +19,14 @@ class AppSidebarButton extends HTMLElement {
             this.shadowRoot.querySelector('.sidebar-button__text').style.fontWeight = 'bold';
         }
         if (selected) {
-            this.shadowRoot.querySelector('.highlight').style.backgroundColor = '#D3E2FE';
+            this.shadowRoot.querySelector('.sidebar-button__button').style.backgroundColor = '#D3E2FE';
             this.shadowRoot.querySelector('.sidebar-button__text').style.fontWeight = 'bold';
         }
     }
 
-    disconnectedCallback() {
+    /* disconnectedCallback() {
 
-    }
+    } */
 
     /* attributeChangedCallback(attribute, oldValue, newValue) {
 
